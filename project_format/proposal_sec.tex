@@ -1,0 +1,61 @@
+\section{Proposal}
+\label{sec:intro}
+
+
+%-------------------------------------------------------------------------
+\subsection{Group Members}
+
+Our group consists of Aryan Singh and Polina Petrova. 
+Aryan will be training a Super Resolution Generative Adversarial Network (SRGAN) to enhance image quality in the dataset 
+and implementing a conditional Generative Adversarial Network (cGAN) to create additional images for each galaxy class. 
+This involves selecting appropriate values for layer size, learning rate, regularization parameters, and loss function.
+Polina will be responsible for implementing the Convolutional Neural Network (CNN) for galaxy classification, 
+including designing the architecture, choosing layers and configuring activation functions tailored to galaxy image data. 
+Polina will also manage the training process, including correcting for overfitting. 
+Each group member will complete hyperparameter tuning on their respective components of the model to achieve optimal accuracy, 
+ensuring balanced trade-offs between model complexity and performance. 
+Together, we will complete a high-level analysis of our GAN-CNN pipeline based on selected evaluation criteria and observe the effectiveness of classifying test instances on a classical cGAN compared to a SR-cGAN. 
+
+
+\subsection{Motivation}
+
+We are addressing the problem of accurately classifying galaxies using CNNs where there is an imbalance of data within the classes. 
+In such a situation, a cGAN can help generate additional data. 
+This problem is interesting because data imbalance is a common real-world problem and leads to overcomplication of training algorithms.
+We will explore how cGANS can be used to mitigate this issue.
+
+\subsection{Literature Review}
+
+We will examine several key papers to provide context and background for our research. 
+Works such as \textit{Deep generative models for galaxy image simulations} \cite{Lanusse21} and 
+\textit{Forging new worlds: high-resolution synthetic galaxies with chained generative adversarial networks} \cite{Fussell19} 
+will provide a foundational understanding of the use of GANs as applied to galaxy morphology classification problems. 
+Additionally, we will explore papers such as \textit{Galaxy classification: a deep learning approach for classifying Sloan Digital Sky Survey images} \cite{Gharat22}, 
+\textit{Star-galaxy classification using deep convolutional neural networks} \cite{Kim16},
+and \textit{Neural computation as a tool for galaxy classification: methods and examples} \cite{Lahav96}, 
+which will inform our approach to constructing a functional CNN and integrate it with our implementation of GAN.
+
+%-------------------------------------------------------------------------
+\subsection{Data}
+We plan to use the Galaxy Zoo 2 dataset, which is publicly available on Kaggle. 
+The dataset includes approximately 250,000 images labeled by volunteers based on characteristics like shape, size, and smoothness. 
+If required, we plan to use Google Colab to accelerate the training process, particularly for GANs as they require significant computational power.
+
+
+\subsection{Approach}
+We propose a combined GAN-CNN model aimed at improving galaxy classification by augmenting limited datasets with synthetic images. 
+The goal is to address the challenge of scarce labeled data without relying on large, deep networks.
+First, we use a SRGAN to improve the image resolution, then we train the cGAN on these enhanced images to produce additional images for each galaxy class. 
+Afterwards, we will build the CNN using a feed-forward architecture, which has been proven effective in image classification tasks. 
+We will modify the architecture as needed, depending on its performance on the galaxy data, ensuring that the CNN is robust and capable of learning from the images effectively. 
+The CNN will first be trained on real data for baseline performance, then with both real and synthetic images to improve classification of underrepresented classes.  
+Finally, we will evaluate and compare the model's performance with real data, cGAN-generated data, and SRGAN-enhanced images.
+
+
+\subsection{Evaluation Metrics}
+
+To evaluate the effectiveness of our model, we will use standard quantitative metrics such as accuracy, precision, recall, and F-1 score, which will help us fine-tune our model. 
+These metrics will be plotted as a visual representation of the GAN-CNN performance for each class label. 
+It will also represent the CNN's performance when trained on the original dataset versus the augmented dataset. 
+We may also use statistical significance tests, such as t-tests, to ensure that performance improvements are not due to random chance. 
+These evaluations will be replicated using cGAN and SRGAN, providing a statistical comparison between the two models.
