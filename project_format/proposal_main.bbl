@@ -1,0 +1,48 @@
+\begin{thebibliography}{8}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Cavanagh et~al.(2021)Cavanagh, Bekki, and Groves]{Cavanagh21}
+M.~K. Cavanagh, K. Bekki, and B.~A. Groves.
+\newblock Morphological classification of galaxies with deep learning: comparing 3-way and 4-way cnns.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 506\penalty0 (1):\penalty0 659--676, 2021.
+
+\bibitem[Dieleman et~al.(2015)Dieleman, Willett, and Dambre]{Dieleman15}
+S. Dieleman, K.~W. Willett, and J. Dambre.
+\newblock Rotation-invariant convolutional neural networks for galaxy morphology prediction.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 450\penalty0 (2):\penalty0 1441--1459, 2015.
+
+\bibitem[Fussell and Moews(2019)]{Fussell19}
+L. Fussell and B. Moews.
+\newblock Forging new worlds: high-resolution synthetic galaxies with chained generative adversarial networks.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 485\penalty0 (3):\penalty0 3203--3214, 2019.
+
+\bibitem[Gharat and Dandawate(2022)]{Gharat22}
+S. Gharat and Y. Dandawate.
+\newblock Galaxy classification: a deep learning approach for classifying sloan digital sky survey images.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 511\penalty0 (4):\penalty0 5120--5124, 2022.
+
+\bibitem[Kim and Brunner(2016)]{Kim16}
+E.~J. Kim and R.~J. Brunner.
+\newblock Star--galaxy classification using deep convolutional neural networks.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 464\penalty0 (4):\penalty0 4463--4475, 2016.
+
+\bibitem[Lahav et~al.(1996)Lahav, Nairn, Sodr{\'e}, and Storrie-Lombardi]{Lahav96}
+Ofer Lahav, A. Nairn, Laerte Sodr{\'e}, and M.~C. Storrie-Lombardi.
+\newblock Neural computation as a tool for galaxy classification: methods and examples.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 283\penalty0 (1):\penalty0 207--221, 1996.
+
+\bibitem[Lanusse et~al.(2021)Lanusse, Mandelbaum, Ravanbakhsh, Li, Freeman, and Póczos]{Lanusse21}
+F. Lanusse, R. Mandelbaum, S. Ravanbakhsh, C.-L. Li, P. Freeman, and B. Póczos.
+\newblock Deep generative models for galaxy image simulations.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 504\penalty0 (4):\penalty0 5543--5555, 2021.
+
+\bibitem[Sharma et~al.(2019)Sharma, Kembhavi, Kembhavi, Sivarani, Abraham, and Vaghmare]{Sharma19}
+K. Sharma, A. Kembhavi, A. Kembhavi, T. Sivarani, S. Abraham, and K. Vaghmare.
+\newblock Application of convolutional neural networks for stellar spectral classification.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 491\penalty0 (2):\penalty0 2280--2300, 2019.
+
+\end{thebibliography}
