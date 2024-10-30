@@ -13,7 +13,7 @@ We used the open-source Galaxy Zoo 2 dataset, which contains classified galaxy i
 Due to the large volume of data used in this project, we were unable to include it in the repository. Below is a map of the file structure. 
 ```
 Parent directory on local machine
-├── 📁 CS682-Project
+├── 📁 CS682-Project (repository)
 │   ├── 📁 classifiers
 │   │   └── CNN.py
 │   │   └── data_processing.py
@@ -22,9 +22,9 @@ Parent directory on local machine
 │   │   └── gz2_filename_mapping.csv
 │   ├── 📁 images_gz2
 │   │   ├── 📁 images
+│   │   │   └── *.jpg
 │   │   ├── results.txt
 │   │   └── results_public.txt
-│   │   └── *.jpg
 ```
 
 ### Packages
