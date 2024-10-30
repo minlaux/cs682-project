@@ -1,8 +1,48 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[et~al.(2019)]{Walmsley2019}
+M.~Walmsley et al.
+\newblock Galaxy zoo: probabilistic morphology through bayesian cnns and active learning.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 491\penalty0 (2):\penalty0 1554--1574, 2019.
+
+\bibitem[Howell(2018)]{Howell2018}
+E. Howell.
+\newblock How many galaxies are there?, 2018.
+\newblock Accessed: Oct. 30, 2024.
+
+\bibitem[Lahav et~al.(1996)Lahav, Nairn, Sodré, and Storrie-Lombardi]{Lahav1996}
+O. Lahav, A. Nairn, L. Sodré, and M.~C. Storrie-Lombardi.
+\newblock Neural computation as a tool for galaxy classification: methods and examples.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 283\penalty0 (1):\penalty0 207--221, 1996.
+
+\bibitem[Lanusse et~al.(2021)Lanusse, Mandelbaum, Ravanbakhsh, Li, Freeman, and Póczos]{Lanusse2021}
+F. Lanusse, R. Mandelbaum, S. Ravanbakhsh, C.-L. Li, P. Freeman, and B. Póczos.
+\newblock Deep generative models for galaxy image simulations.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 504\penalty0 (4):\penalty0 5543--5555, 2021.
+
+\bibitem[Lukic and Brüggen(2016)]{Lukic2016}
+V. Lukic and M. Brüggen.
+\newblock Galaxy classifications with deep learning.
+\newblock \emph{Proceedings of the International Astronomical Union}, 12\penalty0 (S325):\penalty0 217--220, 2016.
+
+\bibitem[McGourty(2007)]{McGourty2007}
+C. McGourty.
+\newblock Scientists seek galaxy hunt help, 2007.
+\newblock Accessed: Oct. 30, 2024.
+
+\bibitem[Sauers(2023)]{Sauers2023}
+E. Sauers.
+\newblock Webb telescope reveals more galaxies in a snapshot than hubble’s deepest survey, 2023.
+\newblock Accessed: Oct. 30, 2024.
+
+\bibitem[Sharma et~al.(2019)Sharma, Kembhavi, Sivarani, Abraham, and Vaghmare]{Sharma2019}
+K. Sharma, A. Kembhavi, T. Sivarani, S. Abraham, and K. Vaghmare.
+\newblock Application of convolutional neural networks for stellar spectral classification.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 491\penalty0 (2):\penalty0 2280--2300, 2019.
 
 \end{thebibliography}
