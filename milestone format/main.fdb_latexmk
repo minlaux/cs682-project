@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1730323799 "main.aux" "main.bbl" "main" 1730323800 0
+["bibtex main"] 1730397735 "main.aux" "main.bbl" "main" 1730397736 0
   "./ieeenat_fullname.bst" 1729282674 26900 a296cb1ebee73f7bfa143751dc4e1dfd ""
-  "./main.bib" 1730323760 4578 f1c5902c804e7fbd9e0f2285f256316a ""
-  "main.aux" 1730323800 2089 c4d7d18c127704a6f2947652e0bdacda "pdflatex"
+  "./main.bib" 1730397479 5240 3ffc5671a88c8d256e9cb4ec15c5a3a5 ""
+  "main.aux" 1730397735 2510 0e94a4c6d5e0b1edd91be08ed2fae348 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1730323799 "/Users/polinapetrova/Desktop/cs682-project/milestone format/main.tex" "main.pdf" "main" 1730323800 0
-  "/Users/polinapetrova/Desktop/cs682-project/milestone format/main.tex" 1730323797 8945 a94af741b650267a56f9cb0338f5766d ""
+["pdflatex"] 1730397735 "/Users/polinapetrova/Desktop/cs682-project/milestone format/main.tex" "main.pdf" "main" 1730397736 0
+  "/Users/polinapetrova/Desktop/cs682-project/milestone format/main.tex" 1730397734 9858 f9e714bff516b60a7290a6676198d479 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -120,11 +120,11 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1699298372 7883459 4b8664f4c6393551b5ec95e2b5ebb8b8 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "cvpr.sty" 1729282674 17231 d197d7d2e6e663ef6add53072500ba5e ""
-  "main.aux" 1730323800 2089 c4d7d18c127704a6f2947652e0bdacda "pdflatex"
-  "main.bbl" 1730323799 2287 5cafa57d7e823545e79b685fd23d8947 "bibtex main"
-  "main.brf" 1730323800 128 262d82b9e36e99b4476a1ff61be2366f "pdflatex"
-  "main.out" 1730323800 518 29a17ff2cf1bce416fa7e9c15109134a "pdflatex"
-  "main.tex" 1730323797 8945 a94af741b650267a56f9cb0338f5766d ""
+  "main.aux" 1730397735 2510 0e94a4c6d5e0b1edd91be08ed2fae348 "pdflatex"
+  "main.bbl" 1730397735 2845 2a2f463e9d8ba33980b39b0e0aa95c8a "bibtex main"
+  "main.brf" 1730397735 291 68f3cd5602c706e9d31fad4c8f9ea41c "pdflatex"
+  "main.out" 1730397735 518 29a17ff2cf1bce416fa7e9c15109134a "pdflatex"
+  "main.tex" 1730397734 9858 f9e714bff516b60a7290a6676198d479 ""
   "preamble.tex" 1729282674 251 f8555edf8cefc33a517dd4f14f9bcd7f ""
   (generated)
   "main.aux"

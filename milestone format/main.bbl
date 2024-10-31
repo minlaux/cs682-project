@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -10,10 +10,20 @@ M.~Walmsley et al.
 \newblock Galaxy zoo: probabilistic morphology through bayesian cnns and active learning.
 \newblock \emph{Monthly Notices of the Royal Astronomical Society}, 491\penalty0 (2):\penalty0 1554--1574, 2019.
 
+\bibitem[Fussell and Moews(2019)]{Fussell19}
+L. Fussell and B. Moews.
+\newblock Forging new worlds: high-resolution synthetic galaxies with chained generative adversarial networks.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 485\penalty0 (3):\penalty0 3203--3214, 2019.
+
 \bibitem[Howell(2018)]{Howell2018}
 E. Howell.
 \newblock How many galaxies are there?, 2018.
 \newblock Accessed: Oct. 30, 2024.
+
+\bibitem[Kim and Brunner(2016)]{Kim16}
+E.~J. Kim and R.~J. Brunner.
+\newblock Star--galaxy classification using deep convolutional neural networks.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 464\penalty0 (4):\penalty0 4463--4475, 2016.
 
 \bibitem[Lahav et~al.(1996)Lahav, Nairn, Sodré, and Storrie-Lombardi]{Lahav1996}
 O. Lahav, A. Nairn, L. Sodré, and M.~C. Storrie-Lombardi.
