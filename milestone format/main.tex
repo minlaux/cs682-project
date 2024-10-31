@@ -42,7 +42,7 @@ Aryan Singh\\
     To mitigate this problem, we propose a novel combined model utilising a Conditional Generative Adversarial Network (cGAN) to generate synthetic images that augment the Galaxy Zoo 2 dataset, which contains approximately 250,000 labelled galaxy images. 
     Our methodology begins with enhancing image resolution using Super Resolution GANs (SRGAN), followed by training the cGAN to produce additional samples for each class, thereby addressing class imbalance without resorting to deeper networks. 
     We draw on foundational works, including studies on deep generative models for galaxy image simulations and prior CNN applications in galaxy classification, to inform our approach. 
-    Our model's performance will be rigorously evaluated using metrics such as accuracy, precision, recall, and F-1 score, comparing results from training on both real and synthetic data against traditional CNNs trained on the original dataset. 
+    Our model's performance will be rigorously evaluated, comparing results from training on both real and synthetic data against traditional CNNs trained on the original dataset. 
     Through this work, we aim to contribute to the ongoing efforts to improve automated galaxy classification and provide a scalable solution to the prevalent issue of data imbalance in astronomical research.
 \end{abstract}
 
@@ -102,15 +102,36 @@ We aim to incorporate similar probabilistic and active learning strategies in fu
 
 % Technical approach
 \section{Method}
-Describe the methods you intend to apply to solve the given problem.
+\textit{Image Preprocessing and Enhancement:} We start with the Galaxy Zoo 2 dataset, which contains a substantial but imbalanced set of labelled galaxy images. 
+Since GANs can benefit from high-quality images, we will first enhance image quality by implementing a Super-Resolution Generative Adversarial Network (SRGAN). 
+The SRGAN will upscale images, improving the resolution to better capture fine details crucial for accurate classification. 
+We will tune SRGAN parameters, including the number of generator and discriminator layers, learning rate and regularisation parameters, to achieve optimal enhancement without introducing artifacts.
+
+\textit{Synthetic Data Generation Using cGAN:} To address the data imbalance across galaxy classes, we will implement a Conditional Generative Adversarial Network (cGAN) to generate additional samples for each class. 
+The cGAN will be conditioned on class labels, ensuring that synthetic images resemble galaxies of specific morphological types. 
+By generating images conditioned on each class, we aim to balance the dataset, allowing the CNN to learn from a more uniform distribution of galaxy characteristics. 
+Hyperparameters, such as the batch size, learning rate and the trade-off between generator and discriminator objectives will be carefully selected to ensure diverse image generation.
+
+\textit{GAN-CNN Pipeline Integration:} The generated synthetic images, alongside the SRGAN-enhanced real images, will be used to train the CNN model. 
+The CNN architecture will feature several convolutional and pooling layers to extract relevant features from galaxy images, followed by fully connected layers for classification. 
+Each layer configuration, activation function, and regularisation strategy will be optimised specifically for galaxy image data. 
+Initially, the CNN will be trained solely on the original dataset to establish a baseline performance. 
+Then, we will re-train the CNN using a combination of real and synthetic data, assessing improvements in classification accuracy and robustness across all classes.
+
+\textit{Evaluation:} We will use accuracy, precision, recall, and F1-score as quantitative metrics to evaluate the CNN's classification performance. 
+Additionally, we will compare results from the CNN trained on original images alone against those trained with the augmented dataset, quantifying improvements attributable to our image generation. 
+Visualisations, such as ROC curves, will provide further insights into class-wise performance, highlighting the impact of the GAN-CNN pipeline on addressing class imbalances.
+
 
 % Intermediate results
 \section{Results}
-State and evaluate your results upto the milestone.
+The SRGAN model has been trained to upscale images by a factor of 2x. 
+Visual inspection of the upscaled images shows noticeable improvements in clarity and detail, especially in smaller galaxy structures. 
+We achieved an average PSNR value of 24.5 across the upscaled images, indicating a high degree of similarity between the generated high-resolution images and their lower-resolution counterparts.
 
 %Intermediate conclusions
 \section{Conclusion}
-State your conclusions upto the milestone. This section might be empty for now but your final report should contain the conclusions of your project.
+
 {
     \small
     % Include all references in the bibliography
