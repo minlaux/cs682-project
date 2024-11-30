@@ -5,26 +5,11 @@
 - Aryan Singh
 
 ## Project Setup
-### Data
-We used the open-source Galaxy Zoo 2 dataset, which contains classified galaxy images collected from the Sloan Sky Survey.
-- https://www.kaggle.com/datasets/jaimetrickz/galaxy-zoo-2-images
+### Data Download
+We used the open-source Galaxy Zoo 2 dataset, downloaded from Kaggle, which contains classified galaxy images collected from the Sloan Sky Survey: https://www.kaggle.com/datasets/jaimetrickz/galaxy-zoo-2-images.
 
-### Repository Structure
-Due to the large volume of data used in this project, we were unable to include it in the repository. Below is a map of the file structure. 
-```
-Parent directory on local machine
-├── 📁 CS682-Project (repository)
-│   ├── 📁 classifiers
-│   │   └── CNN.py
-│   │   └── data_processing.py
-├── 📁 data
-│   │   └── gz2_hart16.csv
-│   │   └── gz2_filename_mapping.csv
-│   ├── 📁 images_gz2
-│   │   ├── 📁 images
-│   │   │   └── *.jpg
-│   │   ├── results.txt
-│   │   └── results_public.txt
-```
+### Data Preprocessing and Model Training
+Data and image preprocessing, as well as CNN model training, were conducted on a Google Colab notebook for greater processing power.
 
-### Packages
+### Evaluation Techniques
+Add later.
