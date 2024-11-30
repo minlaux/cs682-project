@@ -11,3 +11,5 @@ We used the open-source Galaxy Zoo 2 dataset, downloaded from Kaggle, which cont
 ### Data Preprocessing and Model Training
 Data and image preprocessing, as well as CNN model training, were conducted on a Google Colab notebook for greater processing power.
 
+### Evaluation Techniques
+Add later.
