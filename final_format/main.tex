@@ -1,0 +1,68 @@
+% CVPR 2025 Paper Template; see https://github.com/cvpr-org/author-kit
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
+\usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
+
+% Import additional packages in the preamble file, before hyperref
+\input{preamble}
+
+% It is strongly recommended to use hyperref, especially for the review version.
+% hyperref with option pagebackref eases the reviewers' job.
+% Please disable hyperref *only* if you encounter grave issues,
+% e.g. with the file validation for the camera-ready version.
+%
+% If you comment hyperref and then uncomment it, you should delete *.aux before re-running LaTeX.
+% (Or just hit 'q' on the first LaTeX run, let it finish, and you should be clear).
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+
+\def\confName{COMPSCI68@UMass}
+\def\confYear{2024}
+
+%%%%%%%%% TITLE - PLEASE UPDATE
+\title{Project Title}
+
+%%%%%%%%% AUTHORS - PLEASE UPDATE
+\author{First Author\\
+{\tt\small firstauthor@i1.org}
+\and
+Second Author\\
+{\tt\small secondauthor@i2.org}
+}
+
+\begin{document}
+\maketitle
+% ABSTRACT
+\begin{abstract}
+A short summary of your approach and expected results.
+\end{abstract}
+
+%INTRO
+\section{Introduction}
+This section introduces your problem, motivation, and the overall plan. It should describe your problem precisely specifying the dataset to be used, expected results and evaluation.
+
+%RELATED WORK
+\section{Related work}
+A literature survey of past work on this topic. Introduce the baselines you will compare to and the weakness you plan to address. \emph{This section should be nearly complete.}
+
+% Technical approach
+\section{Method}
+Describe the methods you intend to apply to solve the given problem.
+
+% Intermediate results
+\section{Results}
+State and evaluate your results upto the milestone.
+
+%Intermediate conclusions
+\section{Conclusion}
+State your conclusions upto the milestone. This section might be empty for now but your final report should contain the conclusions of your project.
+{
+    \small
+    \bibliographystyle{ieeenat_fullname}
+    \bibliography{main}
+}
+
+
+\end{document}
