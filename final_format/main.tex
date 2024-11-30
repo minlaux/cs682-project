@@ -102,13 +102,24 @@ We aim to incorporate similar probabilistic and active learning strategies in fu
 
 % Technical approach
 \section{Method}
+\subsection{Galaxy Zoo 2 Dataset}
 RECOMMENDATION FROM PROFESSOR:
 Consider adding a section introducing the Galaxy Zoo 2 dataset. 
 Detail the various classes, the image count for each (including some sample images if possible), and discuss any class imbalances. 
 Outline which classes you intend to expand and the scale of this expansion. 
 Additionally, provide an overview of the dataset post-augmentation to show the changes in its composition.
 
-\textit{Image Preprocessing and Enhancement:} We start with the Galaxy Zoo 2 dataset, which contains a substantial but imbalanced set of labelled galaxy images. 
+The Galaxy Zoo 2 dataset contains detailed galaxy morphology data 
+The Galaxy Zoo 2 dataset contains a total of 37 morphological galaxy classes.
+There is a severe imbalance in the dataset, with the most frequent classes containing over 40,000 instances and the least frequent classes containing under 3 instances.
+This posed a serious issue, as there was no way to effectively train the CNN model of the most underrepresented classes.
+
+\textit{Initial Data and Image Preprocessing:} We first cleaned the original dataset, keeping only columns containing debiased data, as well as Object ID, right ascention value and declination value for each galaxy image.
+The debiased columns indicate the debiased fraction of votes in favour of each decision tree response for each task.
+Debiased: which is the weighted vote fraction adjusted for classification bias
+
+\subsection{Image Enhancement and Generation Using GAN}
+\textit{Image Enhancement:} We start with the Galaxy Zoo 2 dataset, which contains a substantial but imbalanced set of labelled galaxy images. 
 Since GANs can benefit from high-quality images, we will first enhance image quality by implementing a Super-Resolution Generative Adversarial Network (SRGAN). 
 The SRGAN will upscale images, improving the resolution to better capture fine details crucial for accurate classification. 
 We will tune SRGAN parameters, including the number of generator and discriminator layers, learning rate and regularisation parameters, to achieve optimal enhancement without introducing artifacts.

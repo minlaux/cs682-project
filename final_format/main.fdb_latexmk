@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1732934956 "main.aux" "main.bbl" "main" 1732935114 0
+["bibtex main"] 1732988076 "main.aux" "main.bbl" "main" 1732991883 0
   "./ieeenat_fullname.bst" 1729282674 26900 a296cb1ebee73f7bfa143751dc4e1dfd ""
-  "./main.bib" 1729282674 2971 4d6cb2afc0a46aea1e444edcdaea4e6a ""
-  "main.aux" 1732935114 1792 a20326e4ec5df3a7afbfe776ccab39e1 "pdflatex"
+  "./main.bib" 1732986762 5240 3ffc5671a88c8d256e9cb4ec15c5a3a5 ""
+  "main.aux" 1732991882 2844 cba1b715e4b64005ee4edf940fdc4d1e "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1732935113 "/Users/polinapetrova/Desktop/cs682-project/final_format/main.tex" "main.pdf" "main" 1732935114 0
-  "/Users/polinapetrova/Desktop/cs682-project/final_format/main.tex" 1732935113 13034 6fdc0189fc188273c5fef38550170f9f ""
+["pdflatex"] 1732991882 "/Users/polinapetrova/Desktop/cs682-project/final_format/main.tex" "main.pdf" "main" 1732991883 0
+  "/Users/polinapetrova/Desktop/cs682-project/final_format/main.tex" 1732991882 13961 1c65877730ef9b28ae2f88a48f477169 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -42,6 +42,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb" 1136849748 46026 6dab18b61c907687b520c72847215a68 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb" 1136849748 45458 a3faba884469519614ca56ba5f6b1de1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/courier/pcrr7t.vf" 1136768653 1344 6ff472164bf9de0fb2e864b28ac156d9 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/times/ptmb.vf" 1136768653 1512 03bea3d428ff1c50e235fb962d229d52 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/times/ptmb7t.vf" 1136768653 1372 788387fea833ef5963f4c5bffe33eb89 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf" 1136768653 1380 0ea3a3370054be6da6acd929ec569f06 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/times/ptmri7t.vf" 1136768653 1384 a9d8adaf491ce34e5fba99dc7bbe5f39 ""
@@ -120,11 +121,11 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1699298372 7883459 4b8664f4c6393551b5ec95e2b5ebb8b8 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "cvpr.sty" 1729282674 17231 d197d7d2e6e663ef6add53072500ba5e ""
-  "main.aux" 1732935114 1792 a20326e4ec5df3a7afbfe776ccab39e1 "pdflatex"
-  "main.bbl" 1732934956 1479 47937846811025578f381e652400b01a "bibtex main"
-  "main.brf" 1732935114 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.out" 1732935114 518 29a17ff2cf1bce416fa7e9c15109134a "pdflatex"
-  "main.tex" 1732935113 13034 6fdc0189fc188273c5fef38550170f9f ""
+  "main.aux" 1732991882 2844 cba1b715e4b64005ee4edf940fdc4d1e "pdflatex"
+  "main.bbl" 1732988076 2845 2a2f463e9d8ba33980b39b0e0aa95c8a "bibtex main"
+  "main.brf" 1732991882 291 68f3cd5602c706e9d31fad4c8f9ea41c "pdflatex"
+  "main.out" 1732991882 992 60529164c2264aace8f812a063bc0914 "pdflatex"
+  "main.tex" 1732991882 13961 1c65877730ef9b28ae2f88a48f477169 ""
   "preamble.tex" 1729282674 251 f8555edf8cefc33a517dd4f14f9bcd7f ""
   (generated)
   "main.aux"

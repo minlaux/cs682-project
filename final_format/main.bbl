@@ -1,38 +1,58 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Alpher(2002)]{Alpher02}
-FirstName Alpher.
-\newblock Frobnication.
-\newblock \emph{IEEE TPAMI}, 12\penalty0 (1):\penalty0 234--778, 2002.
+\bibitem[et~al.(2019)]{Walmsley2019}
+M.~Walmsley et al.
+\newblock Galaxy zoo: probabilistic morphology through bayesian cnns and active learning.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 491\penalty0 (2):\penalty0 1554--1574, 2019.
 
-\bibitem[Alpher and Fotheringham-Smythe(2003)]{Alpher03}
-FirstName Alpher and FirstName Fotheringham-Smythe.
-\newblock Frobnication revisited.
-\newblock \emph{Journal of Foo}, 13\penalty0 (1):\penalty0 234--778, 2003.
+\bibitem[Fussell and Moews(2019)]{Fussell19}
+L. Fussell and B. Moews.
+\newblock Forging new worlds: high-resolution synthetic galaxies with chained generative adversarial networks.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 485\penalty0 (3):\penalty0 3203--3214, 2019.
 
-\bibitem[Alpher and Gamow(2005)]{Alpher05}
-FirstName Alpher and FirstName Gamow.
-\newblock Can a computer frobnicate?
-\newblock In \emph{CVPR}, pages 234--778, 2005.
+\bibitem[Howell(2018)]{Howell2018}
+E. Howell.
+\newblock How many galaxies are there?, 2018.
+\newblock Accessed: Oct. 30, 2024.
 
-\bibitem[Alpher et~al.(2004)Alpher, Fotheringham-Smythe, and Gamow]{Alpher04}
-FirstName Alpher, FirstName Fotheringham-Smythe, and FirstName Gamow.
-\newblock Can a machine frobnicate?
-\newblock \emph{Journal of Foo}, 14\penalty0 (1):\penalty0 234--778, 2004.
+\bibitem[Kim and Brunner(2016)]{Kim16}
+E.~J. Kim and R.~J. Brunner.
+\newblock Star--galaxy classification using deep convolutional neural networks.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 464\penalty0 (4):\penalty0 4463--4475, 2016.
 
-\bibitem[LastName(2014{\natexlab{a}})]{Authors14}
-FirstName LastName.
-\newblock The frobnicatable foo filter, 2014{\natexlab{a}}.
-\newblock Face and Gesture submission ID 324. Supplied as supplemental material {\tt fg324.pdf}.
+\bibitem[Lahav et~al.(1996)Lahav, Nairn, Sodré, and Storrie-Lombardi]{Lahav1996}
+O. Lahav, A. Nairn, L. Sodré, and M.~C. Storrie-Lombardi.
+\newblock Neural computation as a tool for galaxy classification: methods and examples.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 283\penalty0 (1):\penalty0 207--221, 1996.
 
-\bibitem[LastName(2014{\natexlab{b}})]{Authors14b}
-FirstName LastName.
-\newblock Frobnication tutorial, 2014{\natexlab{b}}.
-\newblock Supplied as supplemental material {\tt tr.pdf}.
+\bibitem[Lanusse et~al.(2021)Lanusse, Mandelbaum, Ravanbakhsh, Li, Freeman, and Póczos]{Lanusse2021}
+F. Lanusse, R. Mandelbaum, S. Ravanbakhsh, C.-L. Li, P. Freeman, and B. Póczos.
+\newblock Deep generative models for galaxy image simulations.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 504\penalty0 (4):\penalty0 5543--5555, 2021.
+
+\bibitem[Lukic and Brüggen(2016)]{Lukic2016}
+V. Lukic and M. Brüggen.
+\newblock Galaxy classifications with deep learning.
+\newblock \emph{Proceedings of the International Astronomical Union}, 12\penalty0 (S325):\penalty0 217--220, 2016.
+
+\bibitem[McGourty(2007)]{McGourty2007}
+C. McGourty.
+\newblock Scientists seek galaxy hunt help, 2007.
+\newblock Accessed: Oct. 30, 2024.
+
+\bibitem[Sauers(2023)]{Sauers2023}
+E. Sauers.
+\newblock Webb telescope reveals more galaxies in a snapshot than hubble’s deepest survey, 2023.
+\newblock Accessed: Oct. 30, 2024.
+
+\bibitem[Sharma et~al.(2019)Sharma, Kembhavi, Sivarani, Abraham, and Vaghmare]{Sharma2019}
+K. Sharma, A. Kembhavi, T. Sivarani, S. Abraham, and K. Vaghmare.
+\newblock Application of convolutional neural networks for stellar spectral classification.
+\newblock \emph{Monthly Notices of the Royal Astronomical Society}, 491\penalty0 (2):\penalty0 2280--2300, 2019.
 
 \end{thebibliography}
