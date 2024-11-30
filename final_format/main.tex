@@ -22,44 +22,129 @@
 \def\confYear{2024}
 
 %%%%%%%%% TITLE - PLEASE UPDATE
-\title{Project Title}
+\title{Generative Adversarial Networks for Galaxy Classification Using Convolutional
+Neural Networks}
 
 %%%%%%%%% AUTHORS - PLEASE UPDATE
-\author{First Author\\
-{\tt\small firstauthor@i1.org}
+\author{Polina Petrova\\
+{\tt\small ppetrova@umass.edu}
 \and
-Second Author\\
-{\tt\small secondauthor@i2.org}
+Aryan Singh\\
+{\tt\small arysingh@umass.edu}
 }
 
 \begin{document}
 \maketitle
 % ABSTRACT
 \begin{abstract}
-A short summary of your approach and expected results.
+    The classification of galaxies poses significant challenges due to inherent data imbalances among various morphological classes. 
+    This research addresses the pressing issue of accurately classifying galaxies using Convolutional Neural Networks (CNNs), where traditional approaches often struggle with underrepresented categories. 
+    To mitigate this problem, we propose a novel combined model utilising a Conditional Generative Adversarial Network (cGAN) to generate synthetic images that augment the Galaxy Zoo 2 dataset, which contains approximately 250,000 labelled galaxy images. 
+    Our methodology begins with enhancing image resolution using Super Resolution GANs (SRGAN), followed by training the cGAN to produce additional samples for each class, thereby addressing class imbalance without resorting to deeper networks. 
+    We draw on foundational works, including studies on deep generative models for galaxy image simulations and prior CNN applications in galaxy classification, to inform our approach. 
+    Our model's performance will be rigorously evaluated, comparing results from training on both real and synthetic data against traditional CNNs trained on the original dataset. 
+    Through this work, we aim to contribute to the ongoing efforts to improve automated galaxy classification and provide a scalable solution to the prevalent issue of data imbalance in astronomical research.
 \end{abstract}
 
 %INTRO
 \section{Introduction}
-This section introduces your problem, motivation, and the overall plan. It should describe your problem precisely specifying the dataset to be used, expected results and evaluation.
+With rapid development in technology comes a phenomenon that is referred to as the \textit{data deluge}, – a consequence of an overwhelming influx of data and insufficient resources to process it. 
+Astronomers, in particular, contend with this challenge; estimates suggest the observable universe holds between 100 billion and 200 billion galaxies \cite{Howell2018}.
+A single photograph of a small sky section can capture up to 25,000 galaxies, and the resulting daily data volume overwhelms the limited pool of experts available to classify them \cite{Sauers2023}.
+To address this challenge, astrophysicists launched the \textit{Galaxy Zoo} project in 2007, inviting citizen scientists to help classify over 900,000 galaxies, marking a transformative moment in data processing through public participation \cite{McGourty2007}.
+
+Following the success of the \textit{Galaxy Zoo}, advancements in machine learning spurred efforts to automate galaxy classification. 
+Modern approaches employ Convolutional Neural Networks (CNNs) to recognise patterns with minimal human input. 
+However, a persistent challenge is the quality and distribution of available data. 
+While the \textit{Galaxy Zoo} project provided a substantial dataset, imbalances in class representation can skew training, causing models to favour more frequent classes. 
+Our research specifically addresses this class imbalance in the Galaxy Zoo 2 dataset – a collection of categorised images taken from the Sloan Digital Sky Survey (SDSS) – where certain galaxy types are underrepresented.
+Building deeper networks is a common workaround to address this issue, but we argue that this approach only sidesteps the core problem.
+
+Ideally, a large, balanced dataset would improve model accuracy, but limitations in space imaging and classification complexity make this difficult. 
+To tackle this, we propose a novel solution using Generative Adversarial Networks (GANs) to generate synthetic images for underrepresented galaxy classes in the Galaxy Zoo 2 dataset, which we then use to train a CNN. 
+We expect that by augmenting our data with synthetic images, we can improve classification accuracy across all classes. 
+Our evaluation will compare the GAN-CNN model's performance against traditional CNNs trained on imbalanced data, particularly examining accuracy gains in classifying underrepresented classes. 
+With this combined GAN-CNN model, we aim to address class imbalance directly, eliminating the need for deeper networks as a compensatory measure.
+
 
 %RELATED WORK
 \section{Related work}
-A literature survey of past work on this topic. Introduce the baselines you will compare to and the weakness you plan to address. \emph{This section should be nearly complete.}
+\citet{Lahav1996} offers one of the first discussions of using neural networks in the galaxy classification problem. 
+The study clarifies the role of Artificial Neural Networks (ANNs) in galaxy classification by demonstrating their ability to replicate human classification using ESO-LV galaxy data. 
+ANNs achieve comparable accuracy to human experts, operating within 2 T-type units. 
+The authors argue that ANNs provide a robust statistical framework, improving on linear methods through their capacity for non-linear modelling. 
+While the paper does not cover all classification methods, it emphasises the potential of unsupervised algorithms to discover new features in galaxy data without external guidance. 
+It also highlights the importance of integrating dynamic properties and multiwavelength data to enhance the classification process, as we now have in the Galaxy Zoo 2 dataset. 
+This study lays the groundwork for our exploration into data-driven galaxy classification.
+
+\citet{Fussell19} demonstrate the effectiveness of using GANs to augment limited datasets of galaxy images. 
+The authors find that the original DCGAN architecture can generate realistic galaxy images that align closely with real galaxy data when statistically evaluated. 
+To achieve higher-resolution synthetic galaxies, they introduce a chained approach using StackGAN as a second stage, which overcomes DCGAN’s limitations at higher resolutions. 
+By evaluating physical property distributions of the generated galaxies and confirming their similarity to real data, the study suggests these synthetic images can effectively expand real galaxy datasets. 
+This augmentation is beneficial for various tasks, including galaxy classification, segmentation, deblending, and calibration of shape measurement algorithms. 
+Ultimately, this research highlights GAN architectures as valuable resources for astronomy, providing scalable data for deep learning models that require extensive training samples. 
+We will adopt a similar approach, benchmarking our GAN-generated data against real data in our model pipeline before feeding them into our CNN. 
+
+\citet{Kim16} address the limitations and potential improvements for using CNNs in galaxy classification, emphasising concerns about overfitting due to limited training data. 
+The authors note that while CNNs have shown promise, their model did not significantly outperform traditional machine learning models relying on summary catalog data, likely due to data constraints. 
+Collecting additional spectroscopic training images could mitigate overfitting and enhance CNN performance. 
+However, they argued that the process is costly and time-intensive. 
+For future work, the authors suggest training multiple network architectures and combining them, a strategy that has proven effective in other galaxy classification challenges. 
+Integrating CNN with other classifiers in a hybrid model could also yield improvements, as demonstrated in past studies where blending diverse classification approaches outperformed any single method. 
+We will directly address these concerns in our research, providing a hybrid model that will even out and expand our training data to mitigate overfitting.
+
+Walmsley \citet{Walmsley2019} focus on the limitations of deep learning for galaxy morphology, which often overlook uncertainty in labelling. 
+They introduce a Bayesian CNN model to capture probabilistic predictions for galaxy morphology, leveraging sparse Galaxy Zoo labels. 
+Using Monte Carlo Dropout and active learning, their model selects informative galaxies for labelling, enhancing classification accuracy with fewer labels. 
+This approach, essential for large-scale surveys, offers insights into morphology and astrophysical connections. 
+We aim to incorporate similar probabilistic and active learning strategies in future iterations of our model for effective scaling.
+
 
 % Technical approach
 \section{Method}
-Describe the methods you intend to apply to solve the given problem.
+RECOMMENDATION FROM PROFESSOR:
+Consider adding a section introducing the Galaxy Zoo 2 dataset. 
+Detail the various classes, the image count for each (including some sample images if possible), and discuss any class imbalances. 
+Outline which classes you intend to expand and the scale of this expansion. 
+Additionally, provide an overview of the dataset post-augmentation to show the changes in its composition.
+
+\textit{Image Preprocessing and Enhancement:} We start with the Galaxy Zoo 2 dataset, which contains a substantial but imbalanced set of labelled galaxy images. 
+Since GANs can benefit from high-quality images, we will first enhance image quality by implementing a Super-Resolution Generative Adversarial Network (SRGAN). 
+The SRGAN will upscale images, improving the resolution to better capture fine details crucial for accurate classification. 
+We will tune SRGAN parameters, including the number of generator and discriminator layers, learning rate and regularisation parameters, to achieve optimal enhancement without introducing artifacts.
+
+\textit{Synthetic Data Generation Using cGAN:} To address the data imbalance across galaxy classes, we will implement a Conditional Generative Adversarial Network (cGAN) to generate additional samples for each class. 
+The cGAN will be conditioned on class labels, ensuring that synthetic images resemble galaxies of specific morphological types. 
+By generating images conditioned on each class, we aim to balance the dataset, allowing the CNN to learn from a more uniform distribution of galaxy characteristics. 
+Hyperparameters, such as the batch size, learning rate and the trade-off between generator and discriminator objectives will be carefully selected to ensure diverse image generation.
+
+\textit{GAN-CNN Pipeline Integration:} The generated synthetic images, alongside the SRGAN-enhanced real images, will be used to train the CNN model. 
+The CNN architecture will feature several convolutional and pooling layers to extract relevant features from galaxy images, followed by fully connected layers for classification. 
+Each layer configuration, activation function, and regularisation strategy will be optimised specifically for galaxy image data. 
+Initially, the CNN will be trained solely on the original dataset to establish a baseline performance. 
+Then, we will re-train the CNN using a combination of real and synthetic data, assessing improvements in classification accuracy and robustness across all classes.
+
+\textit{Evaluation:} We will use accuracy, precision, recall, and F1-score as quantitative metrics to evaluate the CNN's classification performance. 
+Additionally, we will compare results from the CNN trained on original images alone against those trained with the augmented dataset, quantifying improvements attributable to our image generation. 
+Visualisations, such as ROC curves, will provide further insights into class-wise performance, highlighting the impact of the GAN-CNN pipeline on addressing class imbalances.
+
 
 % Intermediate results
 \section{Results}
-State and evaluate your results upto the milestone.
+RECOMMENDATION FROM PROFESSOR:
+Consider adding some images to show the generated image quality.
+
+The SRGAN model has been trained to upscale images by a factor of 2x. 
+Visual inspection of the upscaled images shows noticeable improvements in clarity and detail, especially in smaller galaxy structures. 
+We achieved an average PSNR value of 24.5 across the upscaled images, indicating a high degree of similarity between the generated high-resolution images and their lower-resolution counterparts.
 
 %Intermediate conclusions
 \section{Conclusion}
-State your conclusions upto the milestone. This section might be empty for now but your final report should contain the conclusions of your project.
+
 {
     \small
+    % Include all references in the bibliography
+    \nocite{*}
     \bibliographystyle{ieeenat_fullname}
     \bibliography{main}
 }
