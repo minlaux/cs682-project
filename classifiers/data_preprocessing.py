@@ -122,7 +122,7 @@ print("Number of classes:", class_counts.shape[0])
 # print(very_rare_classes)
 
 # save cleaned DataFrame to SQLite
-connection = sqlite3.connect("galaxy.db")
+connection = sqlite3.connect("../data/galaxy.db")
 df_merged_clean.to_sql("galaxy_data", connection, index=False, if_exists="replace")
 connection.close()
 
@@ -169,8 +169,6 @@ def compute_train_transform(seed=123456):
 # ensure the output folder exists
 os.makedirs(output_folder, exist_ok=True)
 
-processed = 0
-
 # # loop over all images in the input folder
 # for filename in image_names:
 #     img_path = os.path.join(input_folder, filename)
@@ -194,7 +192,13 @@ processed = 0
 # loop over all images in the input folder
 for filename in image_names:
     img_path = os.path.join(input_folder, str(filename) + '.jpg')  # Ensure the filename is a string with .jpg extension
-    
+    output_path = os.path.join(output_folder, str(filename) + '.jpg')  # Save with same filename
+
+    # Skip if the image already exists in the output folder
+    if os.path.exists(output_path):
+        print(f"Skipping already processed image: {output_path}")
+        continue
+
     # load image
     img = Image.open(img_path)
     
@@ -203,10 +207,5 @@ for filename in image_names:
     img_transformed = train_transform(img)
     
     # save transformed image to output folder
-    output_path = os.path.join(output_folder, str(filename) + '.jpg')  # Save with same filename
     save_image(img_transformed, output_path)
-    processed += 1
     print(f"Saved processed image: {output_path}")
-
-    if (processed % 10000 == 0):
-        print("Processed", processed, "images")

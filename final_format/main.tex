@@ -109,41 +109,61 @@ Detail the various classes, the image count for each (including some sample imag
 Outline which classes you intend to expand and the scale of this expansion. 
 Additionally, provide an overview of the dataset post-augmentation to show the changes in its composition.
 
-The Galaxy Zoo 2 dataset contains detailed galaxy morphology data 
-The Galaxy Zoo 2 dataset contains a total of 37 morphological galaxy classes.
-There is a severe imbalance in the dataset, with the most frequent classes containing over 40,000 instances and the least frequent classes containing under 3 instances.
+The Galaxy Zoo 2 dataset contains detailed galaxy morphology data that is classified into labels using the decision tree structure detailed in Figure 1.
+\begin{figure}[htbp]
+    \includegraphics[width=\linewidth]{decision_tree.png}
+    \caption{Image representation of the Galaxy Zoo 2 decision tree from the official Galaxy Zoo 2 Data Release \cite{Willett13}.}
+    \label{fig:decisiontree}
+  \end{figure}
+
+\noindent The dataset contains a total of 37 morphological galaxy classes of types: ellipticals, spirals, intermediate spirals, barred spirals and irregulars.
+There is a severe imbalance in the dataset, with the most frequent class containing over 200,000 instances and the least frequent class containing only 6 instances.
 This posed a serious issue, as there was no way to effectively train the CNN model of the most underrepresented classes.
 
 \textit{Initial Data and Image Preprocessing:} We first cleaned the original dataset, keeping only columns containing debiased data, as well as Object ID, right ascention value and declination value for each galaxy image.
-The debiased columns indicate the debiased fraction of votes in favour of each decision tree response for each task.
-Debiased: which is the weighted vote fraction adjusted for classification bias
+The debiased columns indicate the weighted vote fraction adjusted for classification bias in favour of each response for each decision tree level.
+After confirming that the data table did not contain null rows and that each galaxy instance had a corresponding image, we began preprocessing the images.
+Each image was randomly resized to 32 x 32, horizontally flipped with a 50\% probability, applied a colour jitter to with an 80\% probability and converted to greyscale with a 20\% probability.
+These preprocessing techniques allowed the CNN to recognise instances of galaxies regardless of saturation, lighting and orientation of the images.
+\begin{figure}[htbp]
+    \includegraphics[width=\linewidth]{galaxy_preprocess1.png}
+    \includegraphics[width=\linewidth]{galaxy_preprocess2.png}
+    \includegraphics[width=\linewidth]{galaxy_preprocess3.png}
+    \caption{Galaxy images before and after initial preprocessing.}
+    \label{fig:galaxypreprocess}
+  \end{figure}
 
 \subsection{Image Enhancement and Generation Using GAN}
-\textit{Image Enhancement:} We start with the Galaxy Zoo 2 dataset, which contains a substantial but imbalanced set of labelled galaxy images. 
+\noindent \textit{Image Enhancement:} We start with the Galaxy Zoo 2 dataset, which contains a substantial but imbalanced set of labelled galaxy images. 
 Since GANs can benefit from high-quality images, we will first enhance image quality by implementing a Super-Resolution Generative Adversarial Network (SRGAN). 
 The SRGAN will upscale images, improving the resolution to better capture fine details crucial for accurate classification. 
 We will tune SRGAN parameters, including the number of generator and discriminator layers, learning rate and regularisation parameters, to achieve optimal enhancement without introducing artifacts.
+\begin{figure}[htbp]
+    \includegraphics[width=\linewidth]{srgan.png}
+    \caption{Galaxy images in low resolution and upscaled using SRGAN.}
+    \label{fig:galaxysrgan}
+  \end{figure}
 
-\textit{Synthetic Data Generation Using cGAN:} To address the data imbalance across galaxy classes, we will implement a Conditional Generative Adversarial Network (cGAN) to generate additional samples for each class. 
+\noindent \textit{Synthetic Data Generation Using cGAN:} To address the data imbalance across galaxy classes, we will implement a Conditional Generative Adversarial Network (cGAN) to generate additional samples for each class. 
 The cGAN will be conditioned on class labels, ensuring that synthetic images resemble galaxies of specific morphological types. 
 By generating images conditioned on each class, we aim to balance the dataset, allowing the CNN to learn from a more uniform distribution of galaxy characteristics. 
 Hyperparameters, such as the batch size, learning rate and the trade-off between generator and discriminator objectives will be carefully selected to ensure diverse image generation.
 
-\textit{GAN-CNN Pipeline Integration:} The generated synthetic images, alongside the SRGAN-enhanced real images, will be used to train the CNN model. 
+\subsection{GAN-CNN Pipeline Integration} The generated synthetic images, alongside the SRGAN-enhanced real images, will be used to train the CNN model. 
 The CNN architecture will feature several convolutional and pooling layers to extract relevant features from galaxy images, followed by fully connected layers for classification. 
 Each layer configuration, activation function, and regularisation strategy will be optimised specifically for galaxy image data. 
 Initially, the CNN will be trained solely on the original dataset to establish a baseline performance. 
 Then, we will re-train the CNN using a combination of real and synthetic data, assessing improvements in classification accuracy and robustness across all classes.
-
-\textit{Evaluation:} We will use accuracy, precision, recall, and F1-score as quantitative metrics to evaluate the CNN's classification performance. 
-Additionally, we will compare results from the CNN trained on original images alone against those trained with the augmented dataset, quantifying improvements attributable to our image generation. 
-Visualisations, such as ROC curves, will provide further insights into class-wise performance, highlighting the impact of the GAN-CNN pipeline on addressing class imbalances.
 
 
 % Intermediate results
 \section{Results}
 RECOMMENDATION FROM PROFESSOR:
 Consider adding some images to show the generated image quality.
+
+\textit{Evaluation:} We will use accuracy, precision, recall, and F1-score as quantitative metrics to evaluate the CNN's classification performance. 
+Additionally, we will compare results from the CNN trained on original images alone against those trained with the augmented dataset, quantifying improvements attributable to our image generation. 
+Visualisations, such as ROC curves, will provide further insights into class-wise performance, highlighting the impact of the GAN-CNN pipeline on addressing class imbalances.
 
 The SRGAN model has been trained to upscale images by a factor of 2x. 
 Visual inspection of the upscaled images shows noticeable improvements in clarity and detail, especially in smaller galaxy structures. 

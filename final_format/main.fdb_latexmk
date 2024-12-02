@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1732988076 "main.aux" "main.bbl" "main" 1732991883 0
+["bibtex main"] 1733105906 "main.aux" "main.bbl" "main" 1733105911 0
   "./ieeenat_fullname.bst" 1729282674 26900 a296cb1ebee73f7bfa143751dc4e1dfd ""
-  "./main.bib" 1732986762 5240 3ffc5671a88c8d256e9cb4ec15c5a3a5 ""
-  "main.aux" 1732991882 2844 cba1b715e4b64005ee4edf940fdc4d1e "pdflatex"
+  "./main.bib" 1733096955 5635 4330421367266a0e17792c1c9abe5b36 ""
+  "main.aux" 1733105910 4495 4c2ddba048cbeb633fa720abdd5ce20d "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1732991882 "/Users/polinapetrova/Desktop/cs682-project/final_format/main.tex" "main.pdf" "main" 1732991883 0
-  "/Users/polinapetrova/Desktop/cs682-project/final_format/main.tex" 1732991882 13961 1c65877730ef9b28ae2f88a48f477169 ""
+["pdflatex"] 1733105908 "/Users/polinapetrova/Desktop/cs682-project 2/final_format/main.tex" "main.pdf" "main" 1733105911 0
+  "/Users/polinapetrova/Desktop/cs682-project 2/final_format/main.tex" 1733105907 15362 421103c48d4fd31d083ad09180e50ede ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -121,12 +121,17 @@
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1699298372 7883459 4b8664f4c6393551b5ec95e2b5ebb8b8 ""
   "/usr/local/texlive/2023/texmf.cnf" 1678822455 577 1b2b1af17af2508fb20dd85783af4050 ""
   "cvpr.sty" 1729282674 17231 d197d7d2e6e663ef6add53072500ba5e ""
-  "main.aux" 1732991882 2844 cba1b715e4b64005ee4edf940fdc4d1e "pdflatex"
-  "main.bbl" 1732988076 2845 2a2f463e9d8ba33980b39b0e0aa95c8a "bibtex main"
-  "main.brf" 1732991882 291 68f3cd5602c706e9d31fad4c8f9ea41c "pdflatex"
-  "main.out" 1732991882 992 60529164c2264aace8f812a063bc0914 "pdflatex"
-  "main.tex" 1732991882 13961 1c65877730ef9b28ae2f88a48f477169 ""
+  "decision_tree.png" 1733096087 754735 1cb959790f567f70124268e2ad5eeaf5 ""
+  "galaxy_preprocess1.png" 1733097356 1061258 f1c6ebb7a067eaf792bd547f588d6fb1 ""
+  "galaxy_preprocess2.png" 1733097358 1134523 d3ccacf9623c0e4337ec7df162fd409d ""
+  "galaxy_preprocess3.png" 1733097359 1442984 9bfdb396161db01ba9a990a3457c5fa5 ""
+  "main.aux" 1733105910 4495 4c2ddba048cbeb633fa720abdd5ce20d "pdflatex"
+  "main.bbl" 1733105906 3216 b7e3d9c581198b13209eb911e11f9a85 "bibtex main"
+  "main.brf" 1733105910 339 6da4b139f0bd00592c2007863335892d "pdflatex"
+  "main.out" 1733105910 1208 2a578fda324b54762dff49b6cdf2d349 "pdflatex"
+  "main.tex" 1733105907 15362 421103c48d4fd31d083ad09180e50ede ""
   "preamble.tex" 1729282674 251 f8555edf8cefc33a517dd4f14f9bcd7f ""
+  "srgan.png" 1733097304 2073969 72141c1cc05fdb3d1bcc0fa647bf47f9 ""
   (generated)
   "main.aux"
   "main.brf"
