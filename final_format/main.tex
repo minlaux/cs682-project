@@ -102,12 +102,12 @@ We aim to incorporate similar probabilistic and active learning strategies in fu
 
 % Technical approach
 \section{Method}
-\subsection{Galaxy Zoo 2 Dataset}
+\subsection{Galaxy Dataset}
 RECOMMENDATION FROM PROFESSOR:
-Consider adding a section introducing the Galaxy Zoo 2 dataset. 
-Detail the various classes, the image count for each (including some sample images if possible), and discuss any class imbalances. 
-Outline which classes you intend to expand and the scale of this expansion. 
 Additionally, provide an overview of the dataset post-augmentation to show the changes in its composition.
+
+For ease of computation, we chose to use the Galaxy10 dataset, which was created using combined images from the Galaxy Zoo 2 (GZ2) dataset.
+Galaxy10 sampled and merged the original GZ2 dataset, which used over 270,000 SDSS galaxy images, with its DESI Legacy Imaging Surveys (DECaLS) version containing over 440,000 images.
 
 The Galaxy Zoo 2 dataset contains detailed galaxy morphology data that is classified into labels using the decision tree structure detailed in Figure 1.
 \begin{figure}[htbp]
@@ -116,27 +116,65 @@ The Galaxy Zoo 2 dataset contains detailed galaxy morphology data that is classi
     \label{fig:decisiontree}
   \end{figure}
 
-\noindent The dataset contains a total of 37 morphological galaxy classes of types: ellipticals, spirals, intermediate spirals, barred spirals and irregulars.
-There is a severe imbalance in the dataset, with the most frequent class containing over 210,000 instances and the least frequent class containing only 6 instances.
-This posed a serious issue, as there was no way to effectively train the CNN model of the most underrepresented classes.
+\noindent It contains a total of 37 morphological galaxy classes of broad types: ellipticals, spirals, intermediate spirals, barred spirals and irregulars.
+There was a severe imbalance in the dataset that posed a serious model training issue, with the most frequent class containing over 210,000 instances and the least frequent class containing only 6 instances.
+
+The Galaxy10 dataset minimised the issue by merging the data into 10 broader classes and collectively sampling approximately 18,000 images from the SDSS and DECaLS data, offering a more balanced class distribution.
 \begin{figure}[htbp]
-    \includegraphics[width=\linewidth]{feature_distribution.png}
-    \caption{Galaxy class distribution.}
-    \label{fig:featuredist}
+    \includegraphics[width=\linewidth]{galaxy10_images.png}
+    \caption{Example images from each class in Galaxy10 DECaLS. Taken from the official \href{https://astronn.readthedocs.io/en/latest/galaxy10.html}{Galaxy10 documentation}.}
+    \label{fig:galaxyimgs}
+  \end{figure}
+  \begin{figure}[htbp]
+    \includegraphics[width=\linewidth]{galaxy_distribution2.png}
+    \caption{Class distribution in the Galaxy10 dataset.}
+    \label{fig:featuredist2}
+  \end{figure}
+\noindent The most frequent class, \textit{Round Smooth Galaxies}, contains 2,645 images and the least frequent class, \textit{Cigar Shaped Smooth Galaxies}, contains 334 images.
+While this distribution is much more even than the Galaxy Zoo 2 dataset, the CNN model still faced significant difficulties in training due to the relatively smaller number of examples in some classes, which will be detailed in this paper.
+
+
+% \textit{Initial Data and Image Preprocessing:} We first cleaned the original dataset, keeping only columns containing debiased data, as well as Object ID, right ascention value and declination value for each galaxy image.
+% The debiased columns indicate the weighted vote fraction adjusted for classification bias in favour of each response for each decision tree level.
+% After confirming that the data table did not contain null rows and that each galaxy instance had a corresponding image, we began preprocessing the images.
+% Each image was randomly resized to 32 x 32, horizontally flipped with a 50\% probability, applied a colour jitter to with an 80\% probability and converted to greyscale with a 20\% probability.
+% These preprocessing techniques allowed the CNN to recognise instances of galaxies regardless of saturation, lighting and orientation of the images.
+% \begin{figure}[htbp]
+%     \includegraphics[width=\linewidth]{galaxy_preprocess1.png}
+%     \includegraphics[width=\linewidth]{galaxy_preprocess2.png}
+%     \includegraphics[width=\linewidth]{galaxy_preprocess3.png}
+%     \caption{Galaxy images before and after initial preprocessing.}
+%     \label{fig:galaxypreprocess}
+%   \end{figure}
+\subsection{CNN Training on the Galaxy10 DECaLS Dataset}
+Prior to generating artificial galaxy images using the GAN, we trained the CNN on the original Galaxy10 dataset.
+For smoother model training, we used the PyTorch library to construct our Convolutional Neural Network.
+The network contained three 2D convolutional layers with 32, 64 and 128 filters, respectively, followed by a dense fully-connected layer containing 512 neurons.
+This architecture was chosen for its simplicity and reliability in training. 
+We wanted to avoid building deep architectures for the CNN in order to reduce runtime and better evaluate the effectiveness of the GAN's artificial data generation on the model's performance. 
+
+% % might need to delete this later for space
+% \begin{figure}[htbp]
+%     \includegraphics[width=\linewidth]{cnn_arch.png}
+%     \caption{CNN architecture. Generated using Keras library.}
+%     \label{fig:cnnarch}
+%   \end{figure}
+
+As expected, the training accuracy was significantly higher than the testing accuracy, reaching 99.29\% by the 10th epoch, while testing accuracy dropped from a maximum of 57.44\% during the 3rd epoch to 48.59\% during the 10th epoch.
+A similar dip in performance can be seen in Figure 5, where the model was evaluated using precision, recall and F1-score metrics. 
+The results are indicative of the class imbalance mentioned previously, with the network learning instances of the majority classes very well and failing to effectively categorise underrepresented classes. 
+\begin{figure}[htbp]
+    \includegraphics[width=\linewidth]{initial_cnn_acc.png}
+    \caption{CNN performance on the original Galaxy10 dataset. Evaluated using training and testing accuracy.}
+    \label{fig:initialcnnacc}
   \end{figure}
 
-\textit{Initial Data and Image Preprocessing:} We first cleaned the original dataset, keeping only columns containing debiased data, as well as Object ID, right ascention value and declination value for each galaxy image.
-The debiased columns indicate the weighted vote fraction adjusted for classification bias in favour of each response for each decision tree level.
-After confirming that the data table did not contain null rows and that each galaxy instance had a corresponding image, we began preprocessing the images.
-Each image was randomly resized to 32 x 32, horizontally flipped with a 50\% probability, applied a colour jitter to with an 80\% probability and converted to greyscale with a 20\% probability.
-These preprocessing techniques allowed the CNN to recognise instances of galaxies regardless of saturation, lighting and orientation of the images.
 \begin{figure}[htbp]
-    \includegraphics[width=\linewidth]{galaxy_preprocess1.png}
-    \includegraphics[width=\linewidth]{galaxy_preprocess2.png}
-    \includegraphics[width=\linewidth]{galaxy_preprocess3.png}
-    \caption{Galaxy images before and after initial preprocessing.}
-    \label{fig:galaxypreprocess}
+    \includegraphics[width=\linewidth]{initial_cnn_metrics.png}
+    \caption{CNN performance on the original Galaxy10 dataset. Evaluated using precision, recall and F1-score metrics.}
+    \label{fig:initialcnnmet}
   \end{figure}
+
 
 \subsection{Image Enhancement and Generation Using GAN}
 \noindent \textit{Image Enhancement:} We start with the Galaxy Zoo 2 dataset, which contains a substantial but imbalanced set of labelled galaxy images. 
