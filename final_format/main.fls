@@ -775,6 +775,11 @@ INPUT decision_tree.png
 INPUT ./decision_tree.png
 INPUT ./decision_tree.png
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmr7t.tfm
+INPUT ./feature_distribution.png
+INPUT ./feature_distribution.png
+INPUT feature_distribution.png
+INPUT ./feature_distribution.png
+INPUT ./feature_distribution.png
 INPUT ./galaxy_preprocess1.png
 INPUT ./galaxy_preprocess1.png
 INPUT galaxy_preprocess1.png

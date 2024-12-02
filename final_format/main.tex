@@ -117,8 +117,13 @@ The Galaxy Zoo 2 dataset contains detailed galaxy morphology data that is classi
   \end{figure}
 
 \noindent The dataset contains a total of 37 morphological galaxy classes of types: ellipticals, spirals, intermediate spirals, barred spirals and irregulars.
-There is a severe imbalance in the dataset, with the most frequent class containing over 200,000 instances and the least frequent class containing only 6 instances.
+There is a severe imbalance in the dataset, with the most frequent class containing over 210,000 instances and the least frequent class containing only 6 instances.
 This posed a serious issue, as there was no way to effectively train the CNN model of the most underrepresented classes.
+\begin{figure}[htbp]
+    \includegraphics[width=\linewidth]{feature_distribution.png}
+    \caption{Galaxy class distribution.}
+    \label{fig:featuredist}
+  \end{figure}
 
 \textit{Initial Data and Image Preprocessing:} We first cleaned the original dataset, keeping only columns containing debiased data, as well as Object ID, right ascention value and declination value for each galaxy image.
 The debiased columns indicate the weighted vote fraction adjusted for classification bias in favour of each response for each decision tree level.
