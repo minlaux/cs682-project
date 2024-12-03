@@ -39,7 +39,7 @@ Aryan Singh\\
 \begin{abstract}
     The classification of galaxies poses significant challenges due to inherent data imbalances among various morphological classes. 
     This research addresses the pressing issue of accurately classifying galaxies using Convolutional Neural Networks (CNNs), where traditional approaches often struggle with underrepresented categories. 
-    To mitigate this problem, we propose a novel combined model utilising a Conditional Generative Adversarial Network (cGAN) to generate synthetic images that augment the Galaxy Zoo 2 dataset, which contains approximately 250,000 labelled galaxy images. 
+    To mitigate this problem, we propose a novel combined model utilising a Conditional Generative Adversarial Network (cGAN) to generate synthetic images that augment the Galaxy Zoo 2 dataset, which contains approximately 270,000 labelled galaxy images. 
     Our methodology begins with enhancing image resolution using Super Resolution GANs (SRGAN), followed by training the cGAN to produce additional samples for each class, thereby addressing class imbalance without resorting to deeper networks. 
     We draw on foundational works, including studies on deep generative models for galaxy image simulations and prior CNN applications in galaxy classification, to inform our approach. 
     Our model's performance will be rigorously evaluated, comparing results from training on both real and synthetic data against traditional CNNs trained on the original dataset. 
@@ -106,20 +106,18 @@ We aim to incorporate similar probabilistic and active learning strategies in fu
 RECOMMENDATION FROM PROFESSOR:
 Additionally, provide an overview of the dataset post-augmentation to show the changes in its composition.
 
-For ease of computation, we chose to use the Galaxy10 dataset, which was created using combined images from the Galaxy Zoo 2 (GZ2) dataset.
-Galaxy10 sampled and merged the original GZ2 dataset, which used over 270,000 SDSS galaxy images, with its DESI Legacy Imaging Surveys (DECaLS) version containing over 440,000 images.
-
 The Galaxy Zoo 2 dataset contains detailed galaxy morphology data that is classified into labels using the decision tree structure detailed in Figure 1.
+It contains a total of 37 morphological galaxy classes of broad types: ellipticals, spirals, intermediate spirals, barred spirals and irregulars.
+There was a severe imbalance in the dataset that posed a serious model training issue, with the most frequent class containing over 210,000 instances and the least frequent class containing only 6 instances.
 \begin{figure}[htbp]
     \includegraphics[width=\linewidth]{decision_tree.png}
     \caption{Image representation of the Galaxy Zoo 2 decision tree from the official Galaxy Zoo 2 Data Release \cite{Willett13}.}
     \label{fig:decisiontree}
   \end{figure}
 
-\noindent It contains a total of 37 morphological galaxy classes of broad types: ellipticals, spirals, intermediate spirals, barred spirals and irregulars.
-There was a severe imbalance in the dataset that posed a serious model training issue, with the most frequent class containing over 210,000 instances and the least frequent class containing only 6 instances.
-
-The Galaxy10 dataset minimised the issue by merging the data into 10 broader classes and collectively sampling approximately 18,000 images from the SDSS and DECaLS data, offering a more balanced class distribution.
+To provide a more hollistic perspective on Galaxy Zoo 2 (GZ2), we selected the Galaxy10 dataset to use directly in our algorithms.
+The Galaxy10 dataset combines the original GZ2 data, which includes over 270,000 SDSS galaxy images, with additional images from the DESI Legacy Imaging Surveys (DECaLS), totalling over 440,000 images.
+The Galaxy10 dataset minimised class imbalance by merging the data into 10 broader classes and collectively sampling approximately 18,000 images from the SDSS and DECaLS data, offering a more even class distribution.
 \begin{figure}[htbp]
     \includegraphics[width=\linewidth]{galaxy10_images.png}
     \caption{Example images from each class in Galaxy10 DECaLS. Taken from the official \href{https://astronn.readthedocs.io/en/latest/galaxy10.html}{Galaxy10 documentation}.}
@@ -130,7 +128,8 @@ The Galaxy10 dataset minimised the issue by merging the data into 10 broader cla
     \caption{Class distribution in the Galaxy10 dataset.}
     \label{fig:featuredist2}
   \end{figure}
-\noindent The most frequent class, \textit{Round Smooth Galaxies}, contains 2,645 images and the least frequent class, \textit{Cigar Shaped Smooth Galaxies}, contains 334 images.
+
+  \noindent The most frequent class, \textit{Round Smooth Galaxies}, contains 2,645 images and the least frequent class, \textit{Cigar Shaped Smooth Galaxies}, contains 334 images.
 While this distribution is much more even than the Galaxy Zoo 2 dataset, the CNN model still faced significant difficulties in training due to the relatively smaller number of examples in some classes, which will be detailed in this paper.
 
 
@@ -147,11 +146,11 @@ While this distribution is much more even than the Galaxy Zoo 2 dataset, the CNN
 %     \label{fig:galaxypreprocess}
 %   \end{figure}
 \subsection{CNN Training on the Galaxy10 DECaLS Dataset}
-Prior to generating artificial galaxy images using the GAN, we trained the CNN on the original Galaxy10 dataset.
+Prior to generating artificial galaxy images using the cGAN, we trained the CNN on the original Galaxy10 dataset.
 For smoother model training, we used the PyTorch library to construct our Convolutional Neural Network.
 The network contained three 2D convolutional layers with 32, 64 and 128 filters, respectively, followed by a dense fully-connected layer containing 512 neurons.
 This architecture was chosen for its simplicity and reliability in training. 
-We wanted to avoid building deep architectures for the CNN in order to reduce runtime and better evaluate the effectiveness of the GAN's artificial data generation on the model's performance. 
+We wanted to avoid building deep architectures for the CNN in order to reduce runtime and better evaluate the effectiveness of the cGAN's artificial data generation on the model's performance. 
 
 % % might need to delete this later for space
 % \begin{figure}[htbp]
@@ -176,18 +175,18 @@ The results are indicative of the class imbalance mentioned previously, with the
   \end{figure}
 
 
-\subsection{Image Enhancement and Generation Using GAN}
-\noindent \textit{Image Enhancement:} We start with the Galaxy Zoo 2 dataset, which contains a substantial but imbalanced set of labelled galaxy images. 
-Since GANs can benefit from high-quality images, we will first enhance image quality by implementing a Super-Resolution Generative Adversarial Network (SRGAN). 
-The SRGAN will upscale images, improving the resolution to better capture fine details crucial for accurate classification. 
-We will tune SRGAN parameters, including the number of generator and discriminator layers, learning rate and regularisation parameters, to achieve optimal enhancement without introducing artifacts.
+\subsection{Image Enhancement Using SRGAN}
+The first task required in generating the synthetic galaxy images is to enhance their quality by implementing a Super-Resolution Generative Adversarial Network.
+We ran the SRGAN on 100 epochs, producing upscaled images with improved resolution to better capture the fine details crucial for accurate classification.
+The final SRGAN hyperparameters were tuned to contain 8 generator layers and 9 discriminator layers, which provided optimal high-resolution image enhancement without introducing additional artifacts.
 \begin{figure}[htbp]
     \includegraphics[width=\linewidth]{srgan.png}
     \caption{Galaxy images in low resolution and upscaled using SRGAN.}
     \label{fig:galaxysrgan}
   \end{figure}
 
-\noindent \textit{Synthetic Data Generation Using cGAN:} To address the data imbalance across galaxy classes, we will implement a Conditional Generative Adversarial Network (cGAN) to generate additional samples for each class. 
+\subsection{Synthetic Data Generation Using cGAN:} 
+To address the data imbalance across galaxy classes, we will implement a Conditional Generative Adversarial Network (cGAN) to generate additional samples for each class. 
 The cGAN will be conditioned on class labels, ensuring that synthetic images resemble galaxies of specific morphological types. 
 By generating images conditioned on each class, we aim to balance the dataset, allowing the CNN to learn from a more uniform distribution of galaxy characteristics. 
 Hyperparameters, such as the batch size, learning rate and the trade-off between generator and discriminator objectives will be carefully selected to ensure diverse image generation.
