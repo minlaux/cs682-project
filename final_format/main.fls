@@ -1,8 +1,8 @@
-PWD /Users/polinapetrova/Desktop/cs682-project 2/final_format
+PWD /Users/polinapetrova/Desktop/cs682-project/final_format
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/polinapetrova/Desktop/cs682-project 2/final_format/main.tex
+INPUT /Users/polinapetrova/Desktop/cs682-project/final_format/main.tex
 OUTPUT main.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -789,6 +789,16 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/times/ptmb.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/times/ptmr7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT ./gernerated_image.png
+INPUT ./gernerated_image.png
+INPUT gernerated_image.png
+INPUT ./gernerated_image.png
+INPUT ./gernerated_image.png
+INPUT ./balanced classes.png
+INPUT ./balanced classes.png
+INPUT balanced classes.png
+INPUT ./balanced classes.png
+INPUT ./balanced classes.png
 INPUT ./initial_cnn_acc.png
 INPUT ./initial_cnn_acc.png
 INPUT initial_cnn_acc.png
@@ -804,6 +814,23 @@ INPUT ./srgan.png
 INPUT srgan.png
 INPUT ./srgan.png
 INPUT ./srgan.png
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT ./gernerated_image.png
+INPUT ./gernerated_image.png
+INPUT gernerated_image.png
+INPUT ./gernerated_image.png
+INPUT ./accuracy_after.png
+INPUT ./accuracy_after.png
+INPUT accuracy_after.png
+INPUT ./accuracy_after.png
+INPUT ./accuracy_after.png
 INPUT ./main.bbl
 INPUT main.bbl
 INPUT ./main.bbl
@@ -822,6 +849,9 @@ INPUT ./main.out
 INPUT ./main.out
 INPUT ./main.brf
 INPUT ./main.brf
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.6)  2 DEC 2024 21:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.11.6)  2 DEC 2024 23:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/Users/polinapetrova/Desktop/cs682-project 2/final_format/main.tex"
-(/Users/polinapetrova/Desktop/cs682-project 2/final_format/main.tex
+**/Users/polinapetrova/Desktop/cs682-project/final_format/main.tex
+(/Users/polinapetrova/Desktop/cs682-project/final_format/main.tex
 LaTeX2e <2022-11-01> patch level 1
 L3 programming layer <2023-02-22> (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
@@ -353,7 +353,32 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count304
 \l__pdf_internal_box=\box54
-) (./main.aux)
+) (./main.aux
+
+LaTeX Warning: Label `fig:featuredist2' multiply defined.
+
+
+LaTeX Warning: Label `fig:featuredist2@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:featuredist2' multiply defined.
+
+
+LaTeX Warning: Label `fig:featuredist2@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:galaxysrgan' multiply defined.
+
+
+LaTeX Warning: Label `fig:galaxysrgan@cref' multiply defined.
+
+
+LaTeX Warning: Label `fig:galaxysrgan' multiply defined.
+
+
+LaTeX Warning: Label `fig:galaxysrgan@cref' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
@@ -427,60 +452,83 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 <decision_tree.png, id=80, 967.615pt x 725.71124pt>
 File: decision_tree.png Graphic file (type png)
 <use decision_tree.png>
-Package pdftex.def Info: decision_tree.png  used on input line 113.
+Package pdftex.def Info: decision_tree.png  used on input line 110.
 (pdftex.def)             Requested size: 237.13594pt x 177.85063pt.
 <galaxy10_images.png, id=84, 916.42375pt x 457.71pt>
 File: galaxy10_images.png Graphic file (type png)
 <use galaxy10_images.png>
-Package pdftex.def Info: galaxy10_images.png  used on input line 122.
+Package pdftex.def Info: galaxy10_images.png  used on input line 119.
 (pdftex.def)             Requested size: 237.13594pt x 118.43608pt.
 <galaxy_distribution2.png, id=87, 1249.66875pt x 636.3775pt>
 File: galaxy_distribution2.png Graphic file (type png)
 <use galaxy_distribution2.png>
-Package pdftex.def Info: galaxy_distribution2.png  used on input line 127.
+Package pdftex.def Info: galaxy_distribution2.png  used on input line 124.
 (pdftex.def)             Requested size: 237.13594pt x 120.75761pt.
  [2 <./decision_tree.png>]
-<initial_cnn_acc.png, id=98, 614.295pt x 395.3169pt>
+<gernerated_image.png, id=98, 338.26375pt x 340.27126pt>
+File: gernerated_image.png Graphic file (type png)
+<use gernerated_image.png>
+Package pdftex.def Info: gernerated_image.png  used on input line 166.
+(pdftex.def)             Requested size: 237.13594pt x 238.5517pt.
+<balanced classes.png, id=99, 803.0pt x 448.67625pt>
+File: balanced classes.png Graphic file (type png)
+<use balanced classes.png>
+Package pdftex.def Info: balanced classes.png  used on input line 172.
+(pdftex.def)             Requested size: 237.13594pt x 132.49527pt.
+ [3 <./galaxy10_images.png> <./galaxy_distribution2.png>]
+<initial_cnn_acc.png, id=108, 614.295pt x 395.3169pt>
 File: initial_cnn_acc.png Graphic file (type png)
 <use initial_cnn_acc.png>
-Package pdftex.def Info: initial_cnn_acc.png  used on input line 184.
+Package pdftex.def Info: initial_cnn_acc.png  used on input line 192.
 (pdftex.def)             Requested size: 237.13594pt x 152.60463pt.
-<initial_cnn_metrics.png, id=99, 617.1858pt x 395.3169pt>
+<initial_cnn_metrics.png, id=109, 617.1858pt x 395.3169pt>
 File: initial_cnn_metrics.png Graphic file (type png)
 <use initial_cnn_metrics.png>
-Package pdftex.def Info: initial_cnn_metrics.png  used on input line 189.
+Package pdftex.def Info: initial_cnn_metrics.png  used on input line 197.
 (pdftex.def)             Requested size: 237.13594pt x 151.88681pt.
- [3 <./galaxy10_images.png> <./galaxy_distribution2.png>]
-<srgan.png, id=108, 1575.8875pt x 552.0625pt>
+<srgan.png, id=110, 1575.8875pt x 552.0625pt>
 File: srgan.png Graphic file (type png)
 <use srgan.png>
-Package pdftex.def Info: srgan.png  used on input line 200.
+Package pdftex.def Info: srgan.png  used on input line 208.
 (pdftex.def)             Requested size: 237.13594pt x 83.06693pt.
+ [4 <./gernerated_image.png> <./balanced classes.png> <./initial_cnn_acc.png> <./initial_cnn_metrics.png> <./srgan.png>]
+File: gernerated_image.png Graphic file (type png)
+<use gernerated_image.png>
+Package pdftex.def Info: gernerated_image.png  used on input line 220.
+(pdftex.def)             Requested size: 237.13594pt x 238.5517pt.
+<accuracy_after.png, id=125, 609.27625pt x 350.30875pt>
+File: accuracy_after.png Graphic file (type png)
+<use accuracy_after.png>
+Package pdftex.def Info: accuracy_after.png  used on input line 232.
+(pdftex.def)             Requested size: 237.13594pt x 136.3419pt.
  (./main.bbl (./main.brf)
 \tf@brf=\write4
 \openout4 = `main.brf'.
 
- [4 <./initial_cnn_acc.png> <./initial_cnn_metrics.png> <./srgan.png>]) [5
+ [5 <./accuracy_after.png>]) [6
 
 ] (./main.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 892F29596A761DE43126F7B9C488F626;2736.
 Package rerunfilecheck Info: File `main.brf' has not changed.
 (rerunfilecheck)             Checksum: 6DA4B139F0BD00592C2007863335892D;339.
  ) 
 Here is how much of TeX's memory you used:
- 14854 strings out of 476025
- 247863 string characters out of 5790017
+ 14890 strings out of 476025
+ 248534 string characters out of 5790017
  1872388 words of memory out of 5000000
- 35067 multiletter control sequences out of 15000+600000
- 531850 words of font info for 71 fonts, out of 8000000 for 9000
+ 35093 multiletter control sequences out of 15000+600000
+ 533549 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 90i,9n,90p,422b,629s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (5 pages, 6317113 bytes).
+ 90i,9n,90p,892b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (6 pages, 7604593 bytes).
 PDF statistics:
- 167 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
- 38 named destinations out of 1000 (max. 500000)
- 143 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 197 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
+ 43 named destinations out of 1000 (max. 500000)
+ 158 words of extra memory for PDF output out of 10000 (max. 10000000)
 
