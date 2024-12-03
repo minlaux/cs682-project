@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1733181571 "main.aux" "main.bbl" "main" 1733181573 0
+["bibtex main"] 1733191816 "main.aux" "main.bbl" "main" 1733191818 0
   "./ieeenat_fullname.bst" 1729282674 26900 a296cb1ebee73f7bfa143751dc4e1dfd ""
   "./main.bib" 1733172082 5635 4330421367266a0e17792c1c9abe5b36 ""
-  "main.aux" 1733181573 6286 8aba5239e6e4c3f4ca3b89d3cc25ef41 "pdflatex"
+  "main.aux" 1733191818 6286 8acd57738d74933591d5cd2d9f97ed61 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1733181571 "/Users/polinapetrova/Desktop/cs682-project 2/final_format/main.tex" "main.pdf" "main" 1733181573 0
-  "/Users/polinapetrova/Desktop/cs682-project 2/final_format/main.tex" 1733181568 18341 6a5ae53030537ce57efd9172c530c9ce ""
+["pdflatex"] 1733191816 "/Users/polinapetrova/Desktop/cs682-project 2/final_format/main.tex" "main.pdf" "main" 1733191818 0
+  "/Users/polinapetrova/Desktop/cs682-project 2/final_format/main.tex" 1733191814 17475 2ba308ce6673675f018d16442a0ef783 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -126,11 +126,11 @@
   "galaxy_distribution2.png" 1733165940 292924 f55bb22f1720acfacf1d0d1d1cad6897 ""
   "initial_cnn_acc.png" 1733168449 39105 6d5b8aaba30abc27980dcdb5b7794478 ""
   "initial_cnn_metrics.png" 1733168453 52313 ae91c7c35e0a1c2fa99bba60c5fd3bf7 ""
-  "main.aux" 1733181573 6286 8aba5239e6e4c3f4ca3b89d3cc25ef41 "pdflatex"
-  "main.bbl" 1733181571 3216 b7e3d9c581198b13209eb911e11f9a85 "bibtex main"
-  "main.brf" 1733181573 339 6da4b139f0bd00592c2007863335892d "pdflatex"
-  "main.out" 1733181573 1672 b6b7b26e97cf3ad56df004dfaee5558a "pdflatex"
-  "main.tex" 1733181568 18341 6a5ae53030537ce57efd9172c530c9ce ""
+  "main.aux" 1733191818 6286 8acd57738d74933591d5cd2d9f97ed61 "pdflatex"
+  "main.bbl" 1733191816 3216 b7e3d9c581198b13209eb911e11f9a85 "bibtex main"
+  "main.brf" 1733191818 339 6da4b139f0bd00592c2007863335892d "pdflatex"
+  "main.out" 1733191818 1672 b6b7b26e97cf3ad56df004dfaee5558a "pdflatex"
+  "main.tex" 1733191814 17475 2ba308ce6673675f018d16442a0ef783 ""
   "preamble.tex" 1729282674 251 f8555edf8cefc33a517dd4f14f9bcd7f ""
   "srgan.png" 1733097304 2073969 72141c1cc05fdb3d1bcc0fa647bf47f9 ""
   (generated)
