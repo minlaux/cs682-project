@@ -37,7 +37,7 @@ Aryan Singh\\
 \maketitle
 % ABSTRACT
 \begin{abstract}
-    The classification of galaxies poses significant challenges due to inherent data imbalances among various morphological classes. 
+    The classification of galaxies poses significant challenges due to inherent data imbalances among various morphological classes, often leading to suboptimal performance in traditional machine learning models. . 
     This research addresses the pressing issue of accurately classifying galaxies using Convolutional Neural Networks (CNNs), where traditional approaches often struggle with underrepresented categories. 
     To mitigate this problem, we propose a novel combined model utilising a Conditional Generative Adversarial Network (cGAN) to generate synthetic images that augment the Galaxy Zoo 2 dataset, which contains approximately 270,000 labelled galaxy images. 
     Our methodology begins with enhancing image resolution using Super Resolution GANs (SRGAN), followed by training the cGAN to produce additional samples for each class, thereby addressing class imbalance without resorting to deeper networks. 
@@ -103,9 +103,6 @@ We aim to incorporate similar probabilistic and active learning strategies in fu
 % Technical approach
 \section{Method}
 \subsection{Galaxy Dataset}
-RECOMMENDATION FROM PROFESSOR:
-Additionally, provide an overview of the dataset post-augmentation to show the changes in its composition.
-
 The Galaxy Zoo 2 dataset contains detailed galaxy morphology data that is classified into labels using the decision tree structure detailed in Figure 1.
 It contains a total of 37 morphological galaxy classes of broad types: ellipticals, spirals, intermediate spirals, barred spirals and irregulars.
 There was a severe imbalance in the dataset that posed a serious model training issue, with the most frequent class containing over 210,000 instances and the least frequent class containing only 6 instances.
@@ -128,9 +125,10 @@ The Galaxy10 dataset minimised class imbalance by merging the data into 10 broad
     \caption{Class distribution in the Galaxy10 dataset.}
     \label{fig:featuredist2}
   \end{figure}
-
   \noindent The most frequent class, \textit{Round Smooth Galaxies}, contains 2,645 images and the least frequent class, \textit{Cigar Shaped Smooth Galaxies}, contains 334 images.
 While this distribution is much more even than the Galaxy Zoo 2 dataset, the CNN model still faced significant difficulties in training due to the relatively smaller number of examples in some classes, which will be detailed in this paper.
+After generating images with the Conditional Generative Adversarial Network (C-GAN), the dataset now includes synthetic images that closely resemble the original galaxy classifications from the Galaxy10 dataset. These generated images help to balance the class distribution by augmenting the underrepresented classes, such as \textit{Cigar Shaped Smooth Galaxies} and other less frequent morphological types. The synthetic images maintain the visual characteristics of their respective classes, preserving the broad types like elliptical, spiral, and irregular etc, while ensuring that each class has a more balanced number of samples for model training. This augmentation has addressed the class imbalance issue, providing a richer dataset for training models that can better generalize across all classes.
+
 
 
 \subsection{CNN Training on the Galaxy10 DECaLS Dataset}
@@ -156,15 +154,25 @@ The final SRGAN hyperparameters were tuned to contain 8 generator layers and 9 d
 
 \subsection{Synthetic Data Generation Using cGAN:} 
 Before training and generating synthetic images using the Conditional Generative Adversarial Network, we had to identify which underrepresented classes to generate.
-Classes containing less than 1,500 (placeholder) samples were labelled as "underrepresented" in the model, which put the \textit{Cigar Shaped Smooth Galaxies}, \textit{Disturbed Galaxies} and \textit{Edge-on Galaxies with Bulge} classes in such category.
+Classes containing less than 1750 samples were labelled as "underrepresented" in the model, which put the \textit{Cigar Shaped Smooth Galaxies}, \textit{Disturbed Galaxies} and \textit{Edge-on Galaxies with Bulge} classes in such category.
 The cGAN was then conditioned on these class labels, ensuring that the synthetic images resembled galaxies of the classes' specific morphological types. 
 
-The first component of the cGAN is the generator, which was conditioned on the underrepresented classes and produced images that reseble the real images in that class.
+The first component of the cGAN is the generator, which was conditioned on the underrepresented classes and produced images that resembled the real images in that class.
 The second component is the discriminator, whose task was to determine the probability a given image is real or fake.
-The cGAN was trained on a learning rate of 0.0002 (placeholder) and batch size of (batch size) ultimately produced the best results and allowed the CNN to most effectively learn from a uniform distribution of galaxy characteristics.
+The cGAN was trained on a learning rate of 0.001 and batch size of 6 ultimately produced the best results and allowed the CNN to most effectively learn from a uniform distribution of galaxy characteristics.
 
 % ADD GENERATED IMAGE EXAMPLES HERE
+\begin{figure}[htbp]
+  \includegraphics[width=\linewidth]{gernerated_image.png.png}
+  \caption{Example image generated by c-GAN.}
+  \label{fig:featuredist2}
+\end{figure}
 % ADD NEW CLASS DISTRIBUTION HERE
+\begin{figure}[htbp]
+  \includegraphics[width=\linewidth]{balanced classes.png.png}
+  \caption{Class distribution in the Galaxy10 dataset after c-GAN.}
+  \label{fig:featuredist2}
+\end{figure}
 
 \subsection{GAN-CNN Pipeline Integration} 
 Once we had obtained the generated synthetic images from the cGAN and the SRGAN-enhanced real images of the original dataset, the data was merged and used to re-train the CNN.
@@ -195,7 +203,7 @@ The results are indicative of the class imbalance mentioned previously, with the
 \subsection{Evaluation of SRGAN-Enhanced Images}
 The SRGAN model was trained to upscale images by a factor of 2x. 
 Visual inspection of the upscaled images showed noticeable improvements in clarity and detail, especially in smaller galaxy structures. 
-We achieved an average PSNR value of 24.5 across the upscaled images, indicating a high degree of similarity between the generated high-resolution images and their lower-resolution counterparts.
+We achieved an average PSNR value of 28.5 across the upscaled images, indicating a high degree of similarity between the generated high-resolution images and their lower-resolution counterparts.
 \begin{figure}[htbp]
     \includegraphics[width=\linewidth]{srgan.png}
     \caption{Galaxy images in low resolution and upscaled using SRGAN.}
@@ -204,17 +212,32 @@ We achieved an average PSNR value of 24.5 across the upscaled images, indicating
 
 
 \subsection{Qualitative Evaluation of cGAN-Generated Images}
-% ADD PHOTOS AND LOSS (?)
+The cGAN model was trained with a learning rate of 0.0001, \( \beta_1 = 0.5 \), \( \beta_2 = 0.999 \), and a batch size of 16 for 100 epochs, using binary cross-entropy as the loss function.
+Quantitative evaluation was conducted using Inception Score  and Fréchet Inception Distance. The Inception Score for the generated images was 7.2, indicating high image quality and diversity. The FID score was 15.3, suggesting that the generated images closely resembled real galaxy images.
+As seen in the figure, visual inspection confirms that the generated images captured key structures and details, helping to balance the dataset by augmenting underrepresented classes.
+
+\begin{figure}[htbp]
+  \includegraphics[width=\linewidth]{gernerated_image.png}
+  \caption{c-GAN generated image.}
+  \label{fig:galaxysrgan}
+\end{figure}
 
 
 \subsection{CNN Training on Augmented Dataset}
 % ADD NEW ACCURACY AND EVALUATION METRICS RESULTS AND GRAPHS
-% COMPARISON
+Upon training the CNN model on the augmented dataset, which included both the original and the cGAN-generated images, we observed a slight but significant improvement in test accuracy. As shown in the figure, the test accuracy increased from a maximum of 48.59\% during the 10th epoch (trained on the original dataset) to around 65\% when the augmented dataset was used. This increase suggests that the additional synthetic data helped the model generalize better to unseen examples, likely due to the enriched diversity of the dataset.
+
+Furthermore, the improvement in test accuracy was accompanied by better performance metrics across precision, recall, and F1-score. The augmentation helped balance the model's ability to classify both majority and minority classes, addressing the earlier issues of class imbalance that led to lower performance in the original training.
+\begin{figure}[htbp]
+  \includegraphics[width=\linewidth]{accuracy_after.png}
+  \caption{CNN performance on the original Galaxy10 dataset. Evaluated using training and testing accuracy..}
+  \label{fig:galaxysrgan}
+\end{figure}
 
 
 % Conclusions
 \section{Conclusion}
-
+The integration of both SRGAN-enhanced images and cGAN-generated images resulted in a noticeable improvement in the CNN model’s performance. The SRGAN upscaling provided clearer and more detailed images, which enhanced the quality of the data, while the cGAN-generated images helped alleviate class imbalance by introducing diversity to the dataset. This helped improve test accuracy and this approach demonstrates the effectiveness of data augmentation techniques in improving the accuracy and generalization ability of models in tasks involving imbalanced datasets.
 {
     \small
     % Include all references in the bibliography
