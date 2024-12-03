@@ -147,35 +147,11 @@ We wanted to avoid building deep architectures for the CNN in order to reduce ru
 %     \label{fig:cnnarch}
 %   \end{figure}
 
-As expected, the training accuracy was significantly higher than the testing accuracy, reaching 99.29\% by the 10th epoch, while testing accuracy dropped from a maximum of 57.44\% during the 3rd epoch to 48.59\% during the 10th epoch.
-A similar dip in performance can be seen in Figure 5, where the model was evaluated using precision, recall and F1-score metrics. 
-The results are indicative of the class imbalance mentioned previously, with the network learning instances of the majority classes very well and failing to effectively categorise underrepresented classes. 
-\begin{figure}[htbp]
-    \includegraphics[width=\linewidth]{initial_cnn_acc.png}
-    \caption{CNN performance on the original Galaxy10 dataset. Evaluated using training and testing accuracy.}
-    \label{fig:initialcnnacc}
-  \end{figure}
-
-\begin{figure}[htbp]
-    \includegraphics[width=\linewidth]{initial_cnn_metrics.png}
-    \caption{CNN performance on the original Galaxy10 dataset. Evaluated using precision, recall and F1-score metrics.}
-    \label{fig:initialcnnmet}
-  \end{figure}
-
 
 \subsection{Image Enhancement Using SRGAN}
 The first task required in generating the synthetic galaxy images is to enhance their quality by implementing a Super-Resolution Generative Adversarial Network.
 We ran the SRGAN on 100 epochs, producing upscaled images with improved resolution to better capture the fine details crucial for accurate classification.
 The final SRGAN hyperparameters were tuned to contain 8 generator layers and 9 discriminator layers, which provided optimal high-resolution image enhancement without introducing additional artifacts.
-
-The SRGAN model was trained to upscale images by a factor of 2x. 
-Visual inspection of the upscaled images showed noticeable improvements in clarity and detail, especially in smaller galaxy structures. 
-We achieved an average PSNR value of 24.5 across the upscaled images, indicating a high degree of similarity between the generated high-resolution images and their lower-resolution counterparts.
-\begin{figure}[htbp]
-    \includegraphics[width=\linewidth]{srgan.png}
-    \caption{Galaxy images in low resolution and upscaled using SRGAN.}
-    \label{fig:galaxysrgan}
-  \end{figure}
 
 
 \subsection{Synthetic Data Generation Using cGAN:} 
@@ -197,18 +173,43 @@ Once we had obtained the generated synthetic images from the cGAN and the SRGAN-
 
 % Results
 \section{Results}
+\subsection{CNN Training on Original Dataset}
+The CNN model was trained on both the original and augmented datasets to evaluate its ability to classify galaxy images. 
+To compare the performance, we measured the accuracy, precision, recall and F1-score across both the original and augmented datasets.
 
-% ADD NEW ACCURACY AND EVALUATION METRICS GRAPHS
+When the CNN was trained on the original dataset, the training accuracy was significantly higher than the testing accuracy, reaching 99.29\% by the 10th epoch, while testing accuracy dropped from a maximum of 57.44\% during the 3rd epoch to 48.59\% during the 10th epoch.
+A similar dip in performance can be seen in Figure 5, where the model was evaluated using precision, recall and F1-score metrics. 
+The results are indicative of the class imbalance mentioned previously, with the network learning instances of the majority classes very well and failing to effectively categorise underrepresented classes. 
+\begin{figure}[htbp]
+    \includegraphics[width=\linewidth]{initial_cnn_acc.png}
+    \caption{CNN performance on the original Galaxy10 dataset. Evaluated using training and testing accuracy.}
+    \label{fig:initialcnnacc}
+  \end{figure}
+\begin{figure}[htbp]
+    \includegraphics[width=\linewidth]{initial_cnn_metrics.png}
+    \caption{CNN performance on the original Galaxy10 dataset. Evaluated using precision, recall and F1-score metrics.}
+    \label{fig:initialcnnmet}
+  \end{figure}
 
-We will use accuracy, precision, recall, and F1-score as quantitative metrics to evaluate the CNN's classification performance. 
-Additionally, we will compare results from the CNN trained on original images alone against those trained with the augmented dataset, quantifying improvements attributable to our image generation. 
-Visualisations, such as ROC curves, will provide further insights into class-wise performance, highlighting the impact of the GAN-CNN pipeline on addressing class imbalances.
 
-The SRGAN model has been trained to upscale images by a factor of 2x. 
-Visual inspection of the upscaled images shows noticeable improvements in clarity and detail, especially in smaller galaxy structures. 
+\subsection{Evaluation of SRGAN-Enhanced Images}
+The SRGAN model was trained to upscale images by a factor of 2x. 
+Visual inspection of the upscaled images showed noticeable improvements in clarity and detail, especially in smaller galaxy structures. 
 We achieved an average PSNR value of 24.5 across the upscaled images, indicating a high degree of similarity between the generated high-resolution images and their lower-resolution counterparts.
+\begin{figure}[htbp]
+    \includegraphics[width=\linewidth]{srgan.png}
+    \caption{Galaxy images in low resolution and upscaled using SRGAN.}
+    \label{fig:galaxysrgan}
+  \end{figure}
 
 
+\subsection{Qualitative Evaluation of cGAN-Generated Images}
+% ADD PHOTOS AND LOSS (?)
+
+
+\subsection{CNN Training on Augmented Dataset}
+% ADD NEW ACCURACY AND EVALUATION METRICS RESULTS AND GRAPHS
+% COMPARISON
 
 
 % Conclusions
